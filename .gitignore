@@ -1,0 +1,40 @@
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+vendor/
+
+# Project backups
+backup/
+
+# Local working files
+Daily_work/
+
+# Generated / temporary data
+url.txt
+result.csv
+git_shortcut.txt
+
+
+# Logs
+*.log
+
+# Temporary/cache files
+tmp/
+cache/
+
+/Assets
+
+/Assets2
+/backend
+

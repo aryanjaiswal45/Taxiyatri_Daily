@@ -1,0 +1,111 @@
+/* ================================================
+   TaxiYatri — Urbania Features Section CSS
+   Mirrors tt-features.css pattern.
+   Design tokens from common.css / urbania page vars.
+   ================================================ */
+
+.section {
+  padding: var( --space--xl) ;
+  margin-bottom: var(--space-sm);
+}
+
+.u-feat-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm, 16px);
+  margin-top: var(--space-xs, 8px);
+}
+
+.u-feat-card {
+  background: var(--color-white, #ffffff);
+  border-radius: var(--radius-lg, 16px);
+  padding: 20px 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform var(--transition-base, 0.3s ease),
+    box-shadow var(--transition-base, 0.3s ease),
+    border-color var(--transition-base, 0.3s ease);
+}
+
+.u-feat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-primary, #ffc107);
+}
+
+/* Icon box — styled like .actt_feature_card_img */
+.u-feat-icon-box {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 168, 3, 0.05);
+  border: 1.5px solid var(--color-primary, #ffc107);
+  border-radius: var(--radius-md, 12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+  transition: transform var(--transition-base, 0.3s ease),
+    background var(--transition-base, 0.3s ease);
+}
+
+.u-feat-card:hover .u-feat-icon-box {
+  transform: scale(1.1) rotate(2deg);
+  background: rgba(255, 168, 3, 0.14);
+}
+
+/* Title — styled like .actt_feature_card_title */
+.u-feat-title {
+  font-size: var(--font-size-base, 1rem);
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-text-primary, #0b0b14);
+  line-height: 1.2;
+  max-width: 100%;
+  margin: 0 auto 10px;
+}
+
+.u-feat-desc {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .u-feat-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .u-feat-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .u-feat-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm, 16px);
+  }
+
+  .u-feat-icon-box {
+    width: 54px;
+    height: 54px;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 380px) {
+  .u-feat-row {
+    grid-template-columns: 1fr;
+  }
+}

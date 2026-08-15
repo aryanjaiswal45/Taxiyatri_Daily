@@ -1,0 +1,400 @@
+/* ============ Route Card ============ */
+
+.route-card {
+    padding: var(--space-lg) var(--space-sm);
+    background-color: var(--bg-light);
+}
+
+.route-card__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+}
+
+.route-card__image-wrapper {
+    flex: 1;
+    min-width: 0;
+}
+
+.route-card__image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    display: block;
+    object-fit: cover;
+}
+
+.route-card__content {
+    flex: 1;
+    min-width: 0;
+}
+
+.route-card__title {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    margin: 0 0 var(--space-sm);
+}
+
+.route-card__description {
+    margin: 0 0 var(--space-md);
+}
+
+.route-card__info-box {
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-bottom: var(--space-md);
+}
+
+.route-card__info-row {
+    display: flex;
+}
+
+.route-card__info-row+.route-card__info-row {
+    border-top: 1px solid var(--color-gray-300);
+}
+
+.route-card__label {
+    flex: 1;
+    padding: 12px var(--space-sm);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    background: var(--gradient-primary);
+}
+
+.route-card__value {
+    flex: 1;
+    padding: 12px var(--space-sm);
+    font-size: var(--font-size-sm);
+    background-color: var(--color-gray-50);
+}
+
+.route-card__details {
+    font-size: var(--font-size-sm);
+    margin: 0;
+}
+
+/* ============ Location Table ============ */
+
+.location-table {
+    padding: var(--space-lg) var(--space-sm);
+}
+
+.location-table__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: var(--space-md);
+}
+
+.location-table__column {
+    flex: 1;
+    min-width: 0;
+}
+
+.location-table__heading {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-semibold);
+    margin: 0 0 var(--space-sm);
+}
+
+.location-table__card {
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.location-table__row {
+    display: flex;
+    border-bottom: 1px solid var(--color-gray-300);
+}
+
+.location-table__row:last-child {
+    border-bottom: none;
+}
+
+.location-table__label {
+    width: 35%;
+    padding: 12px var(--space-sm);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-light);
+    background: var(--gradient-primary);
+}
+
+.location-table__value {
+    width: 65%;
+    padding: 12px var(--space-sm);
+    font-size: var(--font-size-sm);
+    background-color: var(--color-gray-50);
+}
+
+/* ============ Fare Table ============ */
+
+.fare-table {
+    padding: var(--space-lg) var(--space-sm);
+}
+
+.fare-table__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+.fare-table__table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.fare-table__head {
+    background: var(--gradient-primary);
+}
+
+.fare-table__head th {
+    padding: 12px var(--space-sm);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-light);
+    text-align: left;
+    white-space: nowrap;
+}
+
+.fare-table__body td {
+    padding: 12px var(--space-sm);
+    font-size: var(--font-size-sm);
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.fare-table__row:last-child td {
+    border-bottom: none;
+}
+
+.fare-table__row:hover td {
+    background-color: var(--color-gray-100);
+}
+
+.fare-table__row--highlight td {
+    color: var(--color-primary-dark);
+    font-weight: var(--font-weight-semibold);
+    background-color: var(--bg-secondary);
+}
+
+/* ============ Responsive – 768px ============ */
+
+@media (max-width: 768px) {
+    .route-card__container {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .route-card__title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .location-table__container {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    .location-table__row {
+        flex-direction: column;
+    }
+
+    .location-table__label,
+    .location-table__value {
+        width: 100%;
+        padding: 10px var(--space-xs);
+    }
+
+    .fare-table__head {
+        display: none;
+    }
+
+    .fare-table__table,
+    .fare-table__body,
+    .fare-table__row,
+    .fare-table__body td {
+        display: block;
+        width: 100%;
+    }
+
+    .fare-table__row {
+        margin-bottom: var(--space-sm);
+        border: 1px solid var(--color-gray-300);
+        border-radius: var(--radius-sm);
+        padding: var(--space-xs);
+    }
+
+    .fare-table__row:hover td {
+        background-color: transparent;
+    }
+
+    .fare-table__body td {
+        border: none;
+        padding: var(--space-xs);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .fare-table__body td::before {
+        content: attr(data-label);
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-primary-dark);
+    }
+}
+
+/* ============ Visual Fare Flow (How Taxi Fare Works) ============ */
+.fare-flow-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 30px 0;
+    gap: 15px;
+}
+
+.flow-step {
+    flex: 1;
+    min-width: 150px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.flow-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.flow-icon {
+    font-size: 28px;
+    color: #ffc107;
+    margin-bottom: 12px;
+}
+
+.flow-step h4 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.flow-step p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffc107;
+    font-size: 20px;
+}
+
+@media (max-width: 991px) {
+    .fare-flow-container {
+        flex-direction: column;
+    }
+    .flow-arrow {
+        transform: rotate(90deg);
+        margin: 5px 0;
+    }
+    .flow-step {
+        width: 100%;
+    }
+}
+
+
+/* ============ Multi-Action CTA Panel ============ */
+.cta-panel {
+    background: linear-gradient(135deg, #1f2937, #111827);
+    border-radius: 12px;
+    padding: 35px 25px;
+    text-align: center;
+    color: #fff;
+    margin: 40px 0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.cta-panel__title {
+    color: #fff !important;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.cta-panel__subtitle {
+    font-size: 15px;
+    color: #d1d5db;
+    margin-bottom: 25px;
+}
+
+.cta-panel__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.cta-btn--phone {
+    background-color: #ffc107;
+    color: #000;
+}
+.cta-btn--phone:hover {
+    background-color: #e0a800;
+    color: #000;
+}
+
+.cta-btn--whatsapp {
+    background-color: #25d366;
+    color: #fff;
+}
+.cta-btn--whatsapp:hover {
+    background-color: #1ebd59;
+    color: #fff;
+}
+
+.cta-btn--quote, .cta-btn--book {
+    background-color: transparent;
+    border: 2px solid #ffc107;
+    color: #ffc107;
+}
+.cta-btn--quote:hover, .cta-btn--book:hover {
+    background-color: #ffc107;
+    color: #000;
+}
+
+@media (max-width: 576px) {
+    .cta-panel__buttons {
+        flex-direction: column;
+    }
+    .cta-btn {
+        width: 100%;
+    }
+}

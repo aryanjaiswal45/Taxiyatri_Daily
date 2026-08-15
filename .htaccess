@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Redirect to HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Add www to the domain
+  RewriteCond %{HTTP_HOST} ^taxiyatri\.com$ [NC]
+  RewriteRule ^(.*)$ https://www.taxiyatri.com/$1 [L,R=301]
+  
+  # Rewrite for adding .php extension
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.php -f
+  RewriteRule ^([^/]+)/?$ $1.php [L]
+
+  # Add custom 404 page
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ router.php [L,QSA]
+</IfModule>
+

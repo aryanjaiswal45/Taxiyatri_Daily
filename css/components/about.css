@@ -1,0 +1,240 @@
+/* About Section Styles */
+.about-us {
+  background: var(--gradient-secondary);
+  padding: var(--space-3xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-us::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 193, 7, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.about-us .grid-2 {
+  display: grid;
+  /* Fallback/Safety */
+  gap: var(--space-2xl);
+  align-items: center;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* Prevent overflow */
+}
+
+/* Text Content */
+.about-us .text-content {
+  width: 100%;
+  max-width: 600px;
+  min-width: 0;
+}
+
+
+.about-us .section-title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-md);
+  line-height: var(--line-height-tight);
+  position: relative;
+  padding-bottom: var(--space-sm);
+  text-align: left;
+  /* Override common.css center align if needed, but usually about is left-aligned in grid-2 */
+}
+
+.about-us .section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+.about-us .text-content p {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+  opacity: 0.9;
+}
+
+/* Image Content */
+.about-us .image-content {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  width: 100%;
+  min-width: 0;
+  min-height: 300px;
+  /* Maintained for layout stability */
+}
+
+.about-us .image-content:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-2xl);
+}
+
+.about-us .image-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 152, 0, 0.15) 100%);
+  z-index: 1;
+  transition: opacity var(--transition-base);
+}
+
+.about-us .image-content:hover::before {
+  opacity: 0;
+}
+
+.about-us .responsive-img {
+  width: 100%;
+  height: auto;
+  /* Change from 100% to auto for proper aspect ratio */
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-base);
+}
+
+.about-us .image-content:hover .responsive-img {
+  transform: scale(1.05);
+}
+
+/* Placeholder Styles (redundant if image exists) */
+.about-us .placeholders-rect {
+  background: var(--color-gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive Overrides (specific to about section) */
+@media (max-width: 992px) {
+  .about-us .grid-2 {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .about-us .text-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .about-us .section-title {
+    text-align: center;
+  }
+
+  .about-us .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .about-us .image-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-us {
+    padding: var(--space-xl) 0;
+  }
+
+  .about-us .placeholders-rect {
+    min-height: 250px;
+  }
+}
+
+
+
+.about-us .placeholders-rect img[src=""],
+.about-us .placeholders-rect img:not([src]) {
+  display: none;
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .about-us {
+    padding: 60px 0;
+  }
+
+  .about-us .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-us .section-title {
+    font-size: 2rem;
+  }
+
+  .about-us .text-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .about-us .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .about-us .image-content {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-us {
+    padding: 50px 0;
+  }
+
+  .about-us .section-title {
+    font-size: 1.75rem;
+    padding-bottom: 12px;
+  }
+
+  .about-us .text-content p {
+    font-size: 1rem;
+  }
+
+  .about-us .placeholders-rect {
+    min-height: 300px;
+  }
+
+  .about-us .btn-primary {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us {
+    padding: 40px 0;
+  }
+
+  .about-us .section-title {
+    font-size: 1.5rem;
+  }
+
+  .about-us .text-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .about-us .placeholders-rect {
+    min-height: 250px;
+  }
+}

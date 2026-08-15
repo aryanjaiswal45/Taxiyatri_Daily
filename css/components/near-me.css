@@ -1,0 +1,206 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+.locations-section {
+    padding: 30px 0;
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    border-top: 1px solid #F3F4F6;
+    border-bottom: 1px solid #F3F4F6;
+    margin: 30px 0;
+}
+
+.locations-inner {
+    max-width: 1100px; /* Increased max-width for horizontal look */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Compact Tabs --- */
+.city-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    scrollbar-width: none;
+}
+
+.city-tab {
+    padding: 10px 22px;
+    border-radius: 100px;
+    border: 1px solid #E5E7EB;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    color: #4B5563;
+}
+
+.city-tab.active {
+    background: #F59E0B;
+    border-color: #F59E0B;
+    color: #000;
+}
+
+/* --- Horizontal Card --- */
+.city-card-horizontal {
+    background: #fff;
+    border: 1px solid #F3F4F6;
+    border-radius: 24px;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Horizontal Split */
+    gap: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+@media (max-width: 850px) {
+    .city-card-horizontal {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 24px;
+    }
+}
+
+/* --- Left Column: Info --- */
+.city-header-small {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.city-name-small {
+    font-family: 'Syne', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.live-badge-small {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #FEF3C7;
+    color: #92400E;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: #10B981;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 5px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.city-desc-small {
+    font-size: 14px;
+    color: #6B7280;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.stats-grid-small {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.stat-item-small {
+    background: #F9FAFB;
+    border-radius: 16px;
+    padding: 16px;
+    border: 1px solid #F3F4F6;
+}
+
+.stat-val-small {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.stat-lbl-small {
+    font-size: 12px;
+    color: #9CA3AF;
+    font-weight: 500;
+}
+
+/* --- Right Column: Routes --- */
+.routes-header-small {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 16px;
+}
+
+.route-list-small {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.route-item-small {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: #fff;
+    border: 1px solid #F3F4F6;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.route-main-small {
+    font-weight: 600;
+    color: #374151;
+}
+
+.route-info-small {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.route-price-small {
+    font-weight: 700;
+    color: #D97706;
+}
+
+.route-time-small {
+    font-size: 12px;
+    color: #9CA3AF;
+}
+
+/* --- CTA Button --- */
+.book-btn-small {
+    width: 100%;
+    padding: 14px;
+    background: #F59E0B;
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.book-btn-small:hover {
+    background: #D97706;
+}

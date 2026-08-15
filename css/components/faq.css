@@ -1,0 +1,225 @@
+/* FAQ Section */
+.faq-section {
+  max-width: 850px;
+  margin: var(--space-lg) auto;
+  padding: 0 var(--space-md);
+}
+
+.faq-section h2 {
+  text-align: center;
+
+  margin-bottom: var(--space-xl);
+  color: var(--color-black);
+  letter-spacing: -0.02em;
+}
+
+.faq-item {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-100);
+  margin-bottom: 0;
+  transition: all var(--transition-fast);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  margin: 0;
+  padding: var(--space-md) 0;
+  cursor: pointer;
+  position: relative;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-black);
+  user-select: none;
+}
+
+.faq-question::after {
+  content: "\f078";
+  /* FontAwesome Angle Down */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 16px;
+  color: var(--color-gray-400);
+  transition: transform var(--transition-base);
+}
+
+.faq-item.active .faq-question {
+  color: var(--color-primary);
+}
+
+.faq-item.active .faq-question::after {
+  transform: rotate(180deg);
+  color: var(--color-primary);
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 0 var(--space-xs) 0;
+  color: var(--color-gray-700);
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-base);
+  animation: faqFade var(--transition-base) ease-out forwards;
+}
+
+@keyframes faqFade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .faq-section {
+    margin: var(--space-2xl) auto;
+  }
+
+  .faq-section h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-lg);
+  }
+
+  .faq-question {
+    padding: var(--space-sm) 0;
+    font-size: var(--font-size-base);
+  }
+
+  .faq-answer {
+    padding: 0 0 var(--space-sm) 0;
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* -- Popular Routes Section -- */
+.popular-routes-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+/* -- Card -- */
+.popular-routes-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.popular-routes-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+/* -- Header -- */
+.popular-routes-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.popular-routes-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-secondary);
+  letter-spacing: -0.02em;
+}
+
+/* -- Body -- */
+.popular-routes-body {
+  padding: 0;
+}
+
+/* -- Grid -- */
+.popular-routes-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: var(--space-sm);
+  padding: 0;
+}
+
+/* -- List -- */
+.popular-routes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popular-routes-list li {
+  background: none !important;
+  font-weight: bold !important;
+}
+
+.popular-routes-list li a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 4px var(--space-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-black);
+  text-decoration: none;
+  transition: background var(--transition-fast), color var(--transition-fast), padding-left var(--transition-base);
+}
+
+.popular-routes-list li a::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-gray-300);
+  flex-shrink: 0;
+  transition: background var(--transition-fast), transform var(--transition-base);
+}
+
+.popular-routes-list li a::after {
+  content: "→";
+  margin-left: auto;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: var(--transition-fast);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.popular-routes-list li a:hover {
+  background: var(--bg-secondary);
+  color: var(--color-primary);
+  padding-left: 26px;
+}
+
+.popular-routes-list li a:hover::before {
+  background: var(--color-primary);
+  transform: scale(1.4);
+}
+
+.popular-routes-list li a:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* -- Responsive -- */
+@media (max-width: 960px) {
+  .popular-routes-grid {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .popular-routes-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,438 @@
+.elegant-calc-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+.elegant-calc-card {
+    background: var(--color-white);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 850px;
+    overflow: hidden;
+}
+
+/* Header */
+.calc-header {
+    background: var(--gradient-primary);
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.calc-header h3 {
+    margin: 0 0 4px 0;
+    font-size: 1.25rem;
+    color: var(--color-secondary);
+}
+
+.calc-header p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--color-secondary);
+    opacity: 0.9;
+}
+
+/* Body Layout */
+.calc-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.calc-inputs {
+    flex: 1.2;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.calc-result-area {
+    flex: 1;
+    background: #fdfdfd;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Input Group */
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Trip Category Badge */
+.trip-category-badge {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background: var(--color-gray-200);
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Trip Type Toggle (Pill) */
+.trip-type-toggle {
+    display: flex;
+    background: var(--color-gray-100);
+    border-radius: 30px;
+    padding: 4px;
+    position: relative;
+    transition: opacity 0.2s ease;
+}
+
+.toggle-option {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-option input {
+    position: absolute;
+    opacity: 0;
+}
+
+.toggle-option span {
+    display: block;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    border-radius: 30px;
+    transition: all 0.2s ease;
+}
+
+.toggle-option input:checked+span {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4);
+}
+
+/* Distance Slider */
+.calc-inputs input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: var(--color-gray-200);
+    border-radius: 3px;
+    outline: none;
+    margin: 8px 0;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.calc-inputs input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    border: 3px solid var(--color-white);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.calc-inputs input[type="range"]::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    border: 3px solid var(--color-white);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.distance-val {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+}
+
+.distance-range-labels {
+    font-size: 0.75rem;
+    margin-top: 4px;
+}
+
+/* Vehicle Pills */
+.vehicle-options-compact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.vehicle-pill {
+    cursor: pointer;
+}
+
+.vehicle-pill input {
+    position: absolute;
+    opacity: 0;
+}
+
+.pill-content {
+    display: inline-block;
+    padding: 6px 12px;
+    border: 1px solid var(--color-gray-300);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    transition: all 0.2s ease;
+    background: var(--color-white);
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.vehicle-pill input:checked+.pill-content {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(255, 193, 7, 0.3);
+}
+
+/* Result Box */
+.result-box {
+    text-align: center;
+    padding: 24px 16px;
+    background: var(--gradient-secondary);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.15);
+    border: 1px solid var(--color-primary-light);
+    margin-bottom: 16px;
+}
+
+.result-label {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.result-amount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-secondary);
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.result-details {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+}
+
+.calc-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    color: var(--color-secondary);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 193, 7, 0.3);
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.calc-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 193, 7, 0.4);
+}
+
+.calc-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(255, 193, 7, 0.3);
+}
+
+/* SEO / Disclaimer */
+.seo-disclaimer {
+    text-align: center;
+}
+
+#seo-text {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+.disclaimer-text {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin: 0;
+}
+
+/* Noscript Fallback Table */
+.noscript-fare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    margin-top: 12px;
+}
+
+.noscript-fare-table caption {
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.noscript-fare-table th {
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 2px solid var(--color-gray-300);
+}
+
+.noscript-fare-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+/* ============================
+   Desktop (≥768px)
+   ============================ */
+@media (min-width: 768px) {
+    .elegant-calc-wrapper {
+        padding: 0;
+    }
+
+    .calc-body {
+        flex-direction: row;
+    }
+
+    .calc-inputs {
+        border-right: 1px solid rgba(0, 0, 0, 0.05);
+    }
+}
+
+/* ============================
+   Mobile (≤767px)
+   ============================ */
+@media (max-width: 767px) {
+    .elegant-calc-wrapper {
+        padding: 0 8px;
+    }
+
+    .elegant-calc-card {
+        border-radius: 12px;
+    }
+
+    .calc-header {
+        padding: 14px 16px;
+    }
+
+    .calc-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .calc-header p {
+        font-size: 0.78rem;
+    }
+
+    .calc-inputs {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .calc-result-area {
+        padding: 16px;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .toggle-option span {
+        padding: 7px 8px;
+        font-size: 0.8rem;
+    }
+
+    .calc-inputs input[type="range"]::-webkit-slider-thumb {
+        width: 32px;
+        height: 32px;
+    }
+
+    .calc-inputs input[type="range"]::-moz-range-thumb {
+        width: 32px;
+        height: 32px;
+    }
+
+    .vehicle-options-compact {
+        gap: 6px;
+    }
+
+    .pill-content {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+
+    .result-amount {
+        font-size: 2rem;
+    }
+
+    .result-details {
+        font-size: 0.75rem;
+    }
+
+    .calc-btn {
+        padding: 14px;
+        font-size: 1rem;
+    }
+
+    #seo-text {
+        font-size: 0.75rem;
+    }
+
+    .noscript-fare-table {
+        font-size: 0.7rem;
+    }
+
+    .noscript-fare-table th,
+    .noscript-fare-table td {
+        padding: 5px 4px;
+    }
+}
+
+/* ============================
+   Small Mobile (≤400px)
+   ============================ */
+@media (max-width: 400px) {
+    .elegant-calc-wrapper {
+        padding: 0 4px;
+    }
+
+    .calc-inputs {
+        padding: 12px;
+        gap: 14px;
+    }
+
+    .calc-result-area {
+        padding: 12px;
+    }
+
+    .calc-header h3 {
+        font-size: 1rem;
+    }
+
+    .result-amount {
+        font-size: 1.75rem;
+    }
+
+    .pill-content {
+        padding: 4px 8px;
+        font-size: 0.72rem;
+    }
+}
