@@ -65,6 +65,11 @@ $routes = [
     'template' => __DIR__ . '/templates/dzire.php',
     'params' => ['locationSlug'] 
 ],
+[
+    'pattern' => '#^ertiga-taxi-in-([a-z0-9-]+)-bangalore$#i',
+    'template' => __DIR__ . '/templates/ertiga.php',
+    'params' => ['locationSlug'] 
+],
 
    
  [
