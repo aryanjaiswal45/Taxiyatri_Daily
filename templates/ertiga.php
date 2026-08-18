@@ -195,8 +195,6 @@ f.parentNode.insertBefore(j,f);
   }
 }
 </script>
-
-<!-- Breadcrumb -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -211,8 +209,8 @@ f.parentNode.insertBefore(j,f);
     {
       "@type":"ListItem",
       "position":2,
-      "name":"Ertiga Taxi in <?= esc($parentCity['name']); ?>",
-      "item":"https://www.taxiyatri.com/ertiga-taxi-in-<?= esc($parentCity['slug']); ?>"
+      "name":"Taxi service in <?= esc($parentCity['name']); ?>",
+      "item":"https://www.taxiyatri.com/taxi-service-in-<?= esc($parentCity['slug']); ?>"
     },
     {
       "@type":"ListItem",
@@ -889,7 +887,7 @@ class="ui-btn ui-btn-primary ui-btn-lg">
     <h2>Ertiga vs Dzire Taxi in <?= esc($location['location_name']); ?>, <?= esc($parentCity['name']); ?></h2>
 
     <p>
-        Not sure whether to book an Ertiga or <a href="dzire-taxi-in-<?= esc($location['slug']); ?>-<?= esc($parentCity['slug']); ?>">Dzire from
+        Not sure whether to book an Ertiga or <a href="/dzire-taxi-in-<?= esc($location['slug']); ?>-<?= esc($parentCity['slug']); ?>">Dzire from
         <?= esc($location['location_name']); ?></a> ? Compare passenger capacity,
         luggage space, comfort, and ideal use cases before booking.
     </p>
@@ -1093,8 +1091,8 @@ Travel from <?= esc($location['location_name']); ?> to nearby cities with transp
     <td>145 km</td>
     <td>3 hrs</td>
     <td>Starting from ₹<?php echo number_format($fare=((145*15)*1.5)+500); ?></td>
-    <td><a href=https://api.whatsapp.com/send?phone=919818022687&text=<?= rawurlencode(
-    "Hi! I would like to book a Ertiga from {$location['location_name']}. Please share the fare details." ); ?>"
+    <td><a href="https://api.whatsapp.com/send?phone=919818022687&text=<?= rawurlencode(
+    "Hi! I would like to book a Ertiga from {$location['location_name']}. Please share the fare details." ); ?>
    target="_blank"
    rel="noopener noreferrer"
    class="button-txy">
@@ -1153,15 +1151,13 @@ Travel from <?= esc($location['location_name']); ?> to nearby cities with transp
     <td>1 hr</td>
     <td>Starting from ₹<?php echo number_format($fare=((42*15)*1.5)+500); ?></td>
     <td><a href="https://api.whatsapp.com/send?phone=919818022687&text=<?= rawurlencode(
-    "Hi! I would like to book a Ertiga from {$location['location_name']}. Please share the fare details."
-); ?>"
+    "Hi! I would like to book a Ertiga from {$location['location_name']}. Please share the fare details."); ?>"
    target="_blank"
    rel="noopener noreferrer"
    class="button-txy">
     Book Now
 </a></td>
 </tr>
-
 <tr>
     <td><a href="https://www.taxiyatri.com/bangalore-to-wonderla-cab" target="_blank" rel="noopener noreferrer">Bangalore → Wonderla</a></td>
     <td>38 km</td>
@@ -1243,11 +1239,8 @@ else:
 <div class="info-box">
 
 <p>
-TaxiYatri provides reliable taxi service across <?= esc($location['location_name']); ?>, <?= esc($parentCity['name']); ?> and nearby areas, covering major locations, residential areas, railway stations, airports, and popular destinations.
+TaxiYatri provides reliable <a href="/taxi-service-in-<?= esc($location['slug']); ?>-<?= esc($parentCity['slug']); ?>">taxi service across <?= esc($location['location_name']); ?>, <?= esc($parentCity['name']); ?></a> and nearby areas, covering major locations, residential areas, railway stations, airports, and popular destinations.
 </p></div>
-
-
-
 
 <div style="text-align:center;margin:20px;">
 
@@ -1352,12 +1345,6 @@ Frequently Asked Questions About Ertiga Taxi in
 <?php endforeach; ?>
 
 </section>
-
-
-
-
-
-
 
 <?php include 'components/about.php'; ?>
 
